@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { CheckCircle, ArrowRight, Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion";
+import { CheckCircle, ArrowRight, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const benefits = [
   "Free consultation and project estimation",
@@ -11,31 +11,37 @@ const benefits = [
   "Regular progress updates and demos",
   "Post-launch support and maintenance",
   "Scalable solutions that grow with you",
-]
+];
 
 export default function ValueProposition() {
   return (
-    <section className="py-24 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="relative z-10 bg-background px-6 py-24">
+      <div className="mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="flex items-center gap-2 mb-4">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                 ))}
               </div>
-              <span className="text-sm font-medium">4.9/5 from 200+ reviews</span>
+              <span className="text-sm font-medium text-foreground">
+                4.9/5 from 200+ reviews
+              </span>
             </div>
 
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 text-foreground">
               Transform Your Business with
               <span className="text-primary"> Expert Development</span>
             </h2>
 
             <p className="text-lg text-muted-foreground mb-8">
-              Join hundreds of successful companies who've accelerated their growth with our proven development process
-              and dedicated team.
+              Join hundreds of successful companies who've accelerated their
+              growth with our proven development process and dedicated team.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -44,11 +50,13 @@ export default function ValueProposition() {
                   key={benefit}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>{benefit}</span>
+                  <div className="mt-0.5 flex-shrink-0 rounded-full bg-primary/10 p-1">
+                    <CheckCircle className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="text-foreground">{benefit}</span>
                 </motion.div>
               ))}
             </div>
@@ -58,31 +66,50 @@ export default function ValueProposition() {
                 Start Your Project Today
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-              <Button variant="outline" size="lg" className="flex-1 sm:flex-none bg-transparent">
+              <Button
+                variant="outline"
+                size="lg"
+                className="flex-1 sm:flex-none"
+              >
                 View Our Work
               </Button>
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="relative">
-            <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-8 border">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            <div className="bg-card rounded-2xl shadow-lg p-8 border">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">Get Started Today</h3>
-                <p className="text-muted-foreground">Free consultation • No commitment required</p>
+                <h3 className="text-2xl font-bold mb-2 text-card-foreground">
+                  Get Started Today
+                </h3>
+                <p className="text-muted-foreground">
+                  Free consultation • No commitment required
+                </p>
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
-                  <span className="font-medium">Free Consultation</span>
-                  <span className="text-green-600 font-bold">$0</span>
+                <div className="flex items-center justify-between p-4 bg-primary/10 rounded-lg border border-primary/20">
+                  <span className="font-medium text-card-foreground">
+                    Free Consultation
+                  </span>
+                  <span className="text-primary font-bold">$0</span>
                 </div>
-                <div className="flex items-center justify-between p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                  <span className="font-medium">Project Estimation</span>
-                  <span className="text-blue-600 font-bold">Free</span>
+                <div className="flex items-center justify-between p-4 bg-primary/10 rounded-lg border border-primary/20">
+                  <span className="font-medium text-card-foreground">
+                    Project Estimation
+                  </span>
+                  <span className="text-primary font-bold">Free</span>
                 </div>
-                <div className="flex items-center justify-between p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                  <span className="font-medium">30-Day Guarantee</span>
-                  <span className="text-purple-600 font-bold">Included</span>
+                <div className="flex items-center justify-between p-4 bg-primary/10 rounded-lg border border-primary/20">
+                  <span className="font-medium text-card-foreground">
+                    30-Day Guarantee
+                  </span>
+                  <span className="text-primary font-bold">Included</span>
                 </div>
               </div>
 
@@ -90,11 +117,13 @@ export default function ValueProposition() {
                 Book Free Consultation
               </Button>
 
-              <p className="text-xs text-center text-muted-foreground mt-4">No spam, unsubscribe at any time</p>
+              <p className="text-xs text-center text-muted-foreground mt-4">
+                No spam, unsubscribe at any time
+              </p>
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }
