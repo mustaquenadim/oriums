@@ -15,19 +15,17 @@ import { Input } from '@/components/ui/input';
 import ThemeToggle from '../ThemeToggle';
 
 const companyLinks = [
-  { name: 'About Us', href: '/about' },
-  { name: 'Services', href: '/services' },
-  { name: 'Portfolio', href: '/portfolio' },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'About Us', href: '#about' },
+  { name: 'Services', href: '#services' },
+  { name: 'Portfolio', href: '#portfolio' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 const servicesLinks = [
-  { name: 'Mobile Development', href: '/services/mobile' },
-  { name: 'Web Development', href: '/services/web' },
-  { name: 'UI/UX Design', href: '/services/design' },
-  { name: 'Cloud Services', href: '/services/cloud' },
-  { name: 'Consulting', href: '/services/consulting' },
+  { name: 'Mobile Development', href: '#services' },
+  { name: 'Web Development', href: '#services' },
+  { name: 'UI/UX Design', href: '#services' },
+  { name: 'Cloud Services', href: '#services' },
 ];
 
 const resourcesLinks = [
@@ -39,12 +37,16 @@ const resourcesLinks = [
 ];
 
 const socialLinks = [
-  { name: 'Facebook', icon: Facebook, href: '#' },
-  { name: 'Twitter', icon: Twitter, href: '#' },
-  { name: 'LinkedIn', icon: LinkedIn, href: '#' },
+  {
+    name: 'Facebook',
+    icon: Facebook,
+    href: 'https://www.facebook.com/oriums.software/',
+  },
+  // { name: 'Twitter', icon: Twitter, href: '#' },
+  // { name: 'LinkedIn', icon: LinkedIn, href: '#' },
   { name: 'Instagram', icon: Instagram, href: '#' },
-  { name: 'GitHub', icon: GitHub, href: '#' },
-  { name: 'YouTube', icon: Youtube, href: '#' },
+  // { name: 'GitHub', icon: GitHub, href: '#' },
+  // { name: 'YouTube', icon: Youtube, href: '#' },
 ];
 
 export default function Footer() {
