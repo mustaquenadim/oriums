@@ -114,9 +114,9 @@ export default function Home() {
       {/* <Reveal delay={0.2}>
         <BlogSection />
       </Reveal> */}
-      <Reveal delay={0.1}>
+      {/* <Reveal delay={0.1}>
         <ContactSection />
-      </Reveal>
+      </Reveal> */}
     </>
   );
 }

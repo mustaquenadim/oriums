@@ -16,7 +16,7 @@ export default function Header() {
           <NavLink href='/#services'>Services</NavLink>
           <NavLink href='/#portfolio'>Portfolio</NavLink>
           <NavLink href='#blog'>Blog</NavLink>
-          <NavLink href='#contact'>Contact</NavLink>
+          <NavLink href='#footer'>Contact</NavLink>
         </div>
         <div className='flex items-center space-x-4'>
           <motion.button

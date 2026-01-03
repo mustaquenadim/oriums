@@ -10,9 +10,6 @@ import {
   Phone,
   Mail,
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import ThemeToggle from '../ThemeToggle';
 
 const companyLinks = [
   { name: 'About Us', href: '#about' },
@@ -30,10 +27,10 @@ const servicesLinks = [
 
 const resourcesLinks = [
   { name: 'Blog', href: '/blog' },
-  { name: 'Case Studies', href: '/case-studies' },
-  { name: 'Documentation', href: '/docs' },
-  { name: 'Help Center', href: '/help' },
-  { name: 'Privacy Policy', href: '/privacy' },
+  { name: 'Case Studies', href: '#' },
+  { name: 'Documentation', href: '#' },
+  { name: 'Help Center', href: '#' },
+  { name: 'Privacy Policy', href: '#' },
 ];
 
 const socialLinks = [
@@ -51,7 +48,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className='relative z-10 bg-muted/50 border-t'>
+    <footer id='footer' className='relative z-10 bg-muted/50 border-t'>
       {/* Newsletter Section */}
       {/* <div className='border-b'>
         <div className='mx-auto max-w-7xl px-6 py-12'>
@@ -149,12 +146,14 @@ export default function Footer() {
             <ul className='space-y-4'>
               {resourcesLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className='text-muted-foreground hover:text-foreground transition-colors'
+                  <span
+                    className='text-muted-foreground opacity-50 cursor-not-allowed select-none'
+                    role='link'
+                    aria-disabled='true'
+                    tabIndex={-1}
                   >
                     {link.name}
-                  </Link>
+                  </span>
                 </li>
               ))}
             </ul>
@@ -178,7 +177,6 @@ export default function Footer() {
             </div>
 
             <div className='flex items-center gap-4'>
-              <ThemeToggle />
               <p className='text-muted-foreground text-sm'>
                 &copy; {new Date().getFullYear()} Oriums. All rights reserved.
               </p>
