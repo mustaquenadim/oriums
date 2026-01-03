@@ -59,19 +59,19 @@ export default function ContactForm() {
   if (submitStatus === "success") {
     return (
       <motion.div
-        className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl"
+        className="bg-card border p-8 rounded-2xl shadow-sm"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
         <div className="text-center">
-          <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Message Sent Successfully!</h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <CheckCircle className="h-16 w-16 text-primary mx-auto mb-4" />
+          <h3 className="text-2xl font-bold text-card-foreground mb-2">Message Sent Successfully!</h3>
+          <p className="text-muted-foreground mb-6">
             Thank you for reaching out. We'll get back to you within 2 hours during business hours.
           </p>
-          <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
-            <p className="text-green-700 dark:text-green-300 text-sm">📧 Confirmation email sent to {formData.email}</p>
+          <div className="bg-primary/10 p-4 rounded-lg">
+            <p className="text-primary text-sm">📧 Confirmation email sent to {formData.email}</p>
           </div>
         </div>
       </motion.div>
@@ -80,14 +80,14 @@ export default function ContactForm() {
 
   return (
     <motion.div
-      className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl"
+      className="bg-card border p-8 rounded-2xl shadow-sm"
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6 }}
     >
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Start Your Project</h2>
-        <p className="text-gray-600 dark:text-gray-300">
+        <h2 className="text-3xl font-bold text-card-foreground mb-4">Start Your Project</h2>
+        <p className="text-muted-foreground">
           Fill out the form below and we'll get back to you with a detailed proposal.
         </p>
       </div>
@@ -96,7 +96,7 @@ export default function ContactForm() {
         {/* Name Fields */}
         <div className="grid md:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
               First Name *
             </label>
             <Input
@@ -108,7 +108,7 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
               Last Name *
             </label>
             <Input
@@ -124,7 +124,7 @@ export default function ContactForm() {
         {/* Contact Fields */}
         <div className="grid md:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
               Email Address *
             </label>
             <Input
@@ -137,7 +137,7 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
               Phone Number
             </label>
             <Input
@@ -152,7 +152,7 @@ export default function ContactForm() {
 
         {/* Company */}
         <div>
-          <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
             Company Name
           </label>
           <Input
@@ -166,7 +166,7 @@ export default function ContactForm() {
         {/* Project Details */}
         <div className="grid md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Project Type *</label>
+            <label className="block text-sm font-medium text-foreground mb-2">Project Type *</label>
             <Select value={formData.projectType} onValueChange={(value) => handleChange("projectType", value)}>
               <SelectTrigger>
                 <SelectValue placeholder="Select project type" />
@@ -183,7 +183,7 @@ export default function ContactForm() {
             </Select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Budget Range</label>
+            <label className="block text-sm font-medium text-foreground mb-2">Budget Range</label>
             <Select value={formData.budget} onValueChange={(value) => handleChange("budget", value)}>
               <SelectTrigger>
                 <SelectValue placeholder="Select budget range" />
@@ -202,7 +202,7 @@ export default function ContactForm() {
 
         {/* Timeline */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Project Timeline</label>
+          <label className="block text-sm font-medium text-foreground mb-2">Project Timeline</label>
           <Select value={formData.timeline} onValueChange={(value) => handleChange("timeline", value)}>
             <SelectTrigger>
               <SelectValue placeholder="When do you need this completed?" />
@@ -220,7 +220,7 @@ export default function ContactForm() {
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
             Project Details *
           </label>
           <Textarea
@@ -249,7 +249,7 @@ export default function ContactForm() {
           )}
         </Button>
 
-        <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
+        <p className="text-sm text-muted-foreground text-center">
           By submitting this form, you agree to our privacy policy and terms of service.
         </p>
       </form>

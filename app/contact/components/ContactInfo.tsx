@@ -53,27 +53,27 @@ export default function ContactInfo() {
     >
       {/* Contact Methods */}
       <div>
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Contact Information</h2>
+        <h2 className="text-3xl font-bold text-foreground mb-6">Contact Information</h2>
         <div className="space-y-4">
           {contactMethods.map((method, index) => (
             <motion.a
               key={index}
               href={method.href}
-              className="block bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="block bg-card border p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group"
               whileHover={{ y: -2 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 p-3 bg-blue-100 dark:bg-blue-900 rounded-lg group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
-                  <method.icon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                <div className="flex-shrink-0 p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                  <method.icon className="h-6 w-6 text-primary" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{method.title}</h3>
-                  <p className="text-blue-600 dark:text-blue-400 font-medium">{method.primary}</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{method.secondary}</p>
-                  <span className="text-sm text-blue-600 dark:text-blue-400 group-hover:underline">
+                  <h3 className="font-semibold text-card-foreground mb-1">{method.title}</h3>
+                  <p className="text-primary font-medium">{method.primary}</p>
+                  <p className="text-sm text-muted-foreground mb-2">{method.secondary}</p>
+                  <span className="text-sm text-primary group-hover:underline">
                     {method.action} →
                   </span>
                 </div>
@@ -85,47 +85,47 @@ export default function ContactInfo() {
 
       {/* Business Hours */}
       <motion.div
-        className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg"
+        className="bg-card border p-6 rounded-xl shadow-sm"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <div className="flex items-center mb-4">
-          <Clock className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" />
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Business Hours</h3>
+          <Clock className="h-6 w-6 text-primary mr-3" />
+          <h3 className="text-xl font-semibold text-card-foreground">Business Hours</h3>
         </div>
         <div className="space-y-2">
           {businessHours.map((schedule, index) => (
             <div
               key={index}
-              className="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700 last:border-b-0"
+              className="flex justify-between items-center py-2 border-b border-border last:border-b-0"
             >
-              <span className="text-gray-600 dark:text-gray-300">{schedule.day}</span>
-              <span className="font-medium text-gray-900 dark:text-white">{schedule.hours}</span>
+              <span className="text-muted-foreground">{schedule.day}</span>
+              <span className="font-medium text-card-foreground">{schedule.hours}</span>
             </div>
           ))}
         </div>
-        <div className="mt-4 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
-          <p className="text-sm text-green-700 dark:text-green-300">🟢 Currently available for urgent inquiries</p>
+        <div className="mt-4 p-3 bg-primary/10 rounded-lg">
+          <p className="text-sm text-primary">🟢 Currently available for urgent inquiries</p>
         </div>
       </motion.div>
 
       {/* Quick Stats */}
       <motion.div
-        className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl"
+        className="bg-card border p-6 rounded-xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Why Choose Oriums?</h3>
+        <h3 className="text-xl font-semibold text-card-foreground mb-4">Why Choose Oriums?</h3>
         <div className="grid grid-cols-2 gap-4">
           {quickStats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="flex justify-center mb-2">
-                <stat.icon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                <stat.icon className="h-8 w-8 text-primary" />
               </div>
-              <div className="text-2xl font-bold text-gray-900 dark:text-white">{stat.value}</div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">{stat.label}</div>
+              <div className="text-2xl font-bold text-card-foreground">{stat.value}</div>
+              <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -133,18 +133,18 @@ export default function ContactInfo() {
 
       {/* Emergency Contact */}
       <motion.div
-        className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-6 rounded-xl"
+        className="bg-destructive/10 border border-destructive/20 p-6 rounded-xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.5 }}
       >
-        <h3 className="text-lg font-semibold text-red-800 dark:text-red-300 mb-2">🚨 Emergency Support</h3>
-        <p className="text-red-700 dark:text-red-400 text-sm mb-3">
+        <h3 className="text-lg font-semibold text-destructive mb-2">🚨 Emergency Support</h3>
+        <p className="text-destructive/80 text-sm mb-3">
           For critical issues with existing projects outside business hours:
         </p>
         <a
           href="tel:+15551234999"
-          className="inline-flex items-center text-red-600 dark:text-red-400 font-medium hover:underline"
+          className="inline-flex items-center text-destructive font-medium hover:underline"
         >
           <Phone className="h-4 w-4 mr-2" />
           +1 (555) 123-4999

@@ -47,7 +47,7 @@ export default function ContactFAQ() {
   ]
 
   return (
-    <section className="py-20 px-6 bg-white dark:bg-gray-800">
+    <section className="py-20 px-6 bg-background">
       <div className="max-w-4xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -55,8 +55,8 @@ export default function ContactFAQ() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <h2 className="text-4xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
+          <p className="text-xl text-muted-foreground">
             Quick answers to common questions about working with us
           </p>
         </motion.div>
@@ -65,23 +65,23 @@ export default function ContactFAQ() {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden"
+              className="bg-card border rounded-xl overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <button
-                className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+                className="w-full p-6 text-left flex items-center justify-between hover:bg-muted transition-colors"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
                 <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0 p-2 bg-blue-100 dark:bg-blue-900 rounded-lg">
-                    <faq.icon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                  <div className="flex-shrink-0 p-2 bg-primary/10 rounded-lg">
+                    <faq.icon className="h-5 w-5 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{faq.question}</h3>
+                  <h3 className="text-lg font-semibold text-card-foreground">{faq.question}</h3>
                 </div>
                 <ChevronDown
-                  className={`h-5 w-5 text-gray-500 dark:text-gray-400 transition-transform ${openIndex === index ? "rotate-180" : ""
+                  className={`h-5 w-5 text-muted-foreground transition-transform ${openIndex === index ? "rotate-180" : ""
                     }`}
                 />
               </button>
@@ -96,7 +96,7 @@ export default function ContactFAQ() {
                   >
                     <div className="px-6 pb-6">
                       <div className="pl-16">
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
+                        <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -112,22 +112,22 @@ export default function ContactFAQ() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <div className="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-2xl">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Still have questions?</h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <div className="bg-card border p-8 rounded-2xl">
+            <h3 className="text-xl font-semibold text-card-foreground mb-4">Still have questions?</h3>
+            <p className="text-muted-foreground mb-6">
               Can't find the answer you're looking for? Our team is here to help.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="mailto:hello@oriums.com"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
               >
                 <MessageCircle className="h-4 w-4 mr-2" />
                 Email Us
               </a>
               <a
                 href="tel:+15551234567"
-                className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
+                className="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors"
               >
                 📞 Call Us
               </a>

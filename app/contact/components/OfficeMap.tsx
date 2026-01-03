@@ -30,7 +30,7 @@ export default function OfficeMap() {
   ]
 
   return (
-    <section className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -38,8 +38,8 @@ export default function OfficeMap() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Global Presence</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-foreground mb-4">Our Global Presence</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Visit us at any of our offices worldwide or schedule a virtual meeting
           </p>
         </motion.div>
@@ -52,15 +52,15 @@ export default function OfficeMap() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+            <div className="bg-card border rounded-2xl shadow-sm overflow-hidden">
               {/* Map Placeholder */}
-              <div className="relative h-96 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-700 dark:to-gray-600">
+              <div className="relative h-96 bg-muted">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <MapPin className="h-16 w-16 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Interactive Map</h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">Click on any location to get directions</p>
-                    <Button variant="outline" className="gap-2 bg-transparent">
+                    <MapPin className="h-16 w-16 text-primary mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold text-card-foreground mb-2">Interactive Map</h3>
+                    <p className="text-muted-foreground mb-4">Click on any location to get directions</p>
+                    <Button variant="outline" className="gap-2">
                       <Navigation className="h-4 w-4" />
                       Open in Google Maps
                     </Button>
@@ -91,7 +91,7 @@ export default function OfficeMap() {
             {offices.map((office, index) => (
               <motion.div
                 key={index}
-                className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-card border p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                 whileHover={{ y: -2 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -99,34 +99,34 @@ export default function OfficeMap() {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
+                    <h3 className="text-xl font-semibold text-card-foreground mb-1">
                       {office.name}
                       {office.isHeadquarters && (
-                        <span className="ml-2 px-2 py-1 text-xs bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full">
+                        <span className="ml-2 px-2 py-1 text-xs bg-primary/10 text-primary rounded-full">
                           HQ
                         </span>
                       )}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-3">{office.address}</p>
+                    <p className="text-muted-foreground mb-3">{office.address}</p>
                   </div>
-                  <Button variant="outline" size="sm" className="gap-2 bg-transparent">
+                  <Button variant="outline" size="sm" className="gap-2">
                     <Navigation className="h-4 w-4" />
                     Directions
                   </Button>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="flex items-center text-gray-600 dark:text-gray-300">
+                  <div className="flex items-center text-muted-foreground">
                     <Phone className="h-4 w-4 mr-2" />
                     <span className="text-sm">{office.phone}</span>
                   </div>
-                  <div className="flex items-center text-gray-600 dark:text-gray-300">
+                  <div className="flex items-center text-muted-foreground">
                     <Clock className="h-4 w-4 mr-2" />
                     <span className="text-sm">{office.hours}</span>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                <div className="mt-4 pt-4 border-t border-border">
                   <div className="flex gap-2">
                     <Button variant="outline" size="sm">
                       Schedule Visit
@@ -148,9 +148,9 @@ export default function OfficeMap() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg max-w-4xl mx-auto">
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Can't Visit in Person?</h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <div className="bg-card border p-8 rounded-2xl shadow-sm max-w-4xl mx-auto">
+            <h3 className="text-2xl font-semibold text-card-foreground mb-4">Can't Visit in Person?</h3>
+            <p className="text-muted-foreground mb-6">
               No problem! We offer virtual consultations and can work with clients anywhere in the world.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
