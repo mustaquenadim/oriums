@@ -9,6 +9,8 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <Beams lightColor="#f97216" rotation={30} />
       </div>
+      {/* Gradient blend overlay at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-20 pointer-events-none" />
       <div className="relative z-10 max-w-[1200px] text-center">
         <motion.div
           className="mb-8 inline-flex items-center rounded-full border bg-card px-4 py-2 shadow-sm"
