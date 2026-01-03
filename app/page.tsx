@@ -58,9 +58,9 @@ export default function Home() {
 
       {/* Conversion Optimization Elements */}
       {/* <UrgencyBanner /> */}
-      <ExitIntentPopup />
-      <StickyCallToAction />
-      <SocialProof />
+      {/* <ExitIntentPopup /> */}
+      {/* <StickyCallToAction /> */}
+      {/* <SocialProof /> */}
       {/* <PersonalizedCTA /> */}
 
       {/* Main Content */}
