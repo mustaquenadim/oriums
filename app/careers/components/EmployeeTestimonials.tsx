@@ -1,8 +1,9 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
@@ -32,20 +33,20 @@ const testimonials = [
     tenure: "1.5 years at Oriums",
     image: "/placeholder.svg?height=100&width=100",
   },
-]
+];
 
 export default function EmployeeTestimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [direction, setDirection] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setDirection(1)
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length)
-    }, 6000)
+      setDirection(1);
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
   const slideVariants = {
     enter: (direction: number) => ({
@@ -62,12 +63,15 @@ export default function EmployeeTestimonials() {
       x: direction < 0 ? 1000 : -1000,
       opacity: 0,
     }),
-  }
+  };
 
   const paginate = (newDirection: number) => {
-    setDirection(newDirection)
-    setCurrentIndex((prev) => (prev + newDirection + testimonials.length) % testimonials.length)
-  }
+    setDirection(newDirection);
+    setCurrentIndex(
+      (prev) =>
+        (prev + newDirection + testimonials.length) % testimonials.length
+    );
+  };
 
   return (
     <section className="relative z-10 px-6 py-24">
@@ -79,7 +83,9 @@ export default function EmployeeTestimonials() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl font-mono mb-4">What Our Team Says</h2>
-          <p className="text-xl text-gray-600">Hear from our employees about their experience at Oriums</p>
+          <p className="text-xl text-muted-foreground">
+            Hear from our employees about their experience at Oriums
+          </p>
         </motion.div>
 
         <div className="relative h-[400px] overflow-hidden">
@@ -99,10 +105,10 @@ export default function EmployeeTestimonials() {
             >
               <div className="flex flex-col items-center px-4">
                 <div className="mb-8">
-                  <Quote className="h-12 w-12 text-blue-600 rotate-180" />
+                  <Quote className="h-12 w-12 text-primary rotate-180" />
                 </div>
 
-                <p className="text-2xl text-center max-w-3xl mb-8 text-gray-800 leading-relaxed">
+                <p className="text-2xl text-center max-w-3xl mb-8 text-muted-foreground leading-relaxed">
                   {testimonials[currentIndex].content}
                 </p>
 
@@ -113,9 +119,15 @@ export default function EmployeeTestimonials() {
                     className="w-16 h-16 rounded-full object-cover"
                   />
                   <div className="text-left">
-                    <div className="font-semibold text-lg">{testimonials[currentIndex].author}</div>
-                    <div className="text-gray-600">{testimonials[currentIndex].position}</div>
-                    <div className="text-sm text-blue-600">{testimonials[currentIndex].tenure}</div>
+                    <div className="font-semibold text-lg">
+                      {testimonials[currentIndex].author}
+                    </div>
+                    <div className="text-muted-foreground">
+                      {testimonials[currentIndex].position}
+                    </div>
+                    <div className="text-sm text-primary">
+                      {testimonials[currentIndex].tenure}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -123,37 +135,45 @@ export default function EmployeeTestimonials() {
           </AnimatePresence>
 
           {/* Navigation Buttons */}
-          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none px-4">
-            <button
+          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none px-4 z-10">
+            <Button
               onClick={() => paginate(-1)}
-              className="p-2 rounded-full bg-white shadow-lg border border-gray-200 hover:bg-gray-50 pointer-events-auto transition-colors"
+              variant="outline"
+              size="icon"
+              className="pointer-events-auto bg-background hover:bg-primary hover:text-primary-foreground shadow-lg rounded-full"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-600" />
-            </button>
-            <button
+              <ChevronLeft className="w-6 h-6" />
+            </Button>
+            <Button
               onClick={() => paginate(1)}
-              className="p-2 rounded-full bg-white shadow-lg border border-gray-200 hover:bg-gray-50 pointer-events-auto transition-colors"
+              variant="outline"
+              size="icon"
+              className="pointer-events-auto bg-background hover:bg-primary hover:text-primary-foreground shadow-lg rounded-full"
             >
-              <ChevronRight className="w-6 h-6 text-gray-600" />
-            </button>
+              <ChevronRight className="w-6 h-6" />
+            </Button>
           </div>
         </div>
 
         {/* Pagination Dots */}
         <div className="flex justify-center space-x-2 mt-8">
           {testimonials.map((_, index) => (
-            <button
+            <Button
               key={index}
               onClick={() => {
-                setDirection(index > currentIndex ? 1 : -1)
-                setCurrentIndex(index)
+                setDirection(index > currentIndex ? 1 : -1);
+                setCurrentIndex(index);
               }}
-              className={`w-2 h-2 rounded-full transition-colors ${index === currentIndex ? "bg-blue-600" : "bg-gray-300"
-                }`}
-            />
+              className={`w-2 h-2 rounded-full transition-colors ${
+                index === currentIndex ? "bg-primary" : "bg-muted"
+              }`}
+              size="icon"
+            >
+              <span className="sr-only">Go to slide {index + 1}</span>
+            </Button>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

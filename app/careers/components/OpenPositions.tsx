@@ -1,9 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { MapPin, Clock, DollarSign, ChevronDown, ChevronUp } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  MapPin,
+  Clock,
+  DollarSign,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const positions = [
   {
@@ -36,7 +42,8 @@ const positions = [
     location: "Remote / San Francisco",
     type: "Full-time",
     salary: "$100k - $130k",
-    description: "Join our mobile team to build innovative mobile applications that reach millions of users worldwide.",
+    description:
+      "Join our mobile team to build innovative mobile applications that reach millions of users worldwide.",
     requirements: [
       "3+ years of React Native development experience",
       "Strong knowledge of JavaScript/TypeScript",
@@ -58,7 +65,8 @@ const positions = [
     location: "Remote / Los Angeles",
     type: "Full-time",
     salary: "$80k - $110k",
-    description: "We're seeking a creative UI/UX designer to help us create beautiful and intuitive user experiences.",
+    description:
+      "We're seeking a creative UI/UX designer to help us create beautiful and intuitive user experiences.",
     requirements: [
       "3+ years of UI/UX design experience",
       "Proficiency in Figma, Sketch, or Adobe Creative Suite",
@@ -80,7 +88,8 @@ const positions = [
     location: "Remote / Austin",
     type: "Full-time",
     salary: "$110k - $140k",
-    description: "Help us build and maintain robust infrastructure that powers our applications and services.",
+    description:
+      "Help us build and maintain robust infrastructure that powers our applications and services.",
     requirements: [
       "4+ years of DevOps/Infrastructure experience",
       "Experience with containerization (Docker, Kubernetes)",
@@ -95,13 +104,13 @@ const positions = [
       "Automate deployment and scaling processes",
     ],
   },
-]
+];
 
 export default function OpenPositions() {
-  const [expandedPosition, setExpandedPosition] = useState<number | null>(null)
+  const [expandedPosition, setExpandedPosition] = useState<number | null>(null);
 
   return (
-    <section className="relative z-10 px-6 py-24 bg-gray-50">
+    <section className="relative z-10 px-6 py-24 bg-background">
       <div className="mx-auto max-w-4xl">
         <motion.div
           className="text-center mb-16"
@@ -110,14 +119,16 @@ export default function OpenPositions() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl font-mono mb-4">Open Positions</h2>
-          <p className="text-xl text-gray-600">Discover exciting opportunities to grow your career with us</p>
+          <p className="text-xl text-muted-foreground">
+            Discover exciting opportunities to grow your career with us
+          </p>
         </motion.div>
 
         <div className="space-y-6">
           {positions.map((position, index) => (
             <motion.div
               key={position.id}
-              className="bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden"
+              className="bg-card rounded-2xl border border-border shadow-lg overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -125,8 +136,10 @@ export default function OpenPositions() {
               <div className="p-6">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
-                    <h3 className="text-2xl font-semibold mb-2">{position.title}</h3>
-                    <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                    <h3 className="text-2xl font-semibold mb-2">
+                      {position.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                       <div className="flex items-center">
                         <MapPin className="h-4 w-4 mr-1" />
                         {position.location}
@@ -144,7 +157,11 @@ export default function OpenPositions() {
                   <div className="mt-4 md:mt-0 flex gap-2">
                     <Button
                       variant="outline"
-                      onClick={() => setExpandedPosition(expandedPosition === position.id ? null : position.id)}
+                      onClick={() =>
+                        setExpandedPosition(
+                          expandedPosition === position.id ? null : position.id
+                        )
+                      }
                     >
                       {expandedPosition === position.id ? (
                         <>
@@ -159,7 +176,9 @@ export default function OpenPositions() {
                     <Button>Apply Now</Button>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-4">{position.description}</p>
+                <p className="text-muted-foreground mb-4">
+                  {position.description}
+                </p>
               </div>
 
               {expandedPosition === position.id && (
@@ -167,27 +186,35 @@ export default function OpenPositions() {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="border-t border-gray-200 p-6"
+                  className="border-t border-border p-6"
                 >
                   <div className="grid gap-6 md:grid-cols-2">
                     <div>
-                      <h4 className="text-lg font-semibold mb-3">Requirements</h4>
+                      <h4 className="text-lg font-semibold mb-3">
+                        Requirements
+                      </h4>
                       <ul className="space-y-2">
                         {position.requirements.map((req, idx) => (
                           <li key={idx} className="flex items-start">
-                            <div className="mt-1.5 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0" />
-                            <span className="ml-3 text-gray-600">{req}</span>
+                            <div className="mt-1.5 h-2 w-2 rounded-full bg-primary flex-shrink-0" />
+                            <span className="ml-3 text-muted-foreground">
+                              {req}
+                            </span>
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold mb-3">Responsibilities</h4>
+                      <h4 className="text-lg font-semibold mb-3">
+                        Responsibilities
+                      </h4>
                       <ul className="space-y-2">
                         {position.responsibilities.map((resp, idx) => (
                           <li key={idx} className="flex items-start">
-                            <div className="mt-1.5 h-2 w-2 rounded-full bg-green-600 flex-shrink-0" />
-                            <span className="ml-3 text-gray-600">{resp}</span>
+                            <div className="mt-1.5 h-2 w-2 rounded-full bg-primary flex-shrink-0" />
+                            <span className="ml-3 text-muted-foreground">
+                              {resp}
+                            </span>
                           </li>
                         ))}
                       </ul>
@@ -200,5 +227,5 @@ export default function OpenPositions() {
         </div>
       </div>
     </section>
-  )
+  );
 }

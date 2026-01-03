@@ -1,30 +1,34 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Lightbulb, Users, Trophy, Coffee } from "lucide-react"
+import { motion } from "framer-motion";
+import { Lightbulb, Users, Trophy, Coffee } from "lucide-react";
 
 const cultureValues = [
   {
     icon: Lightbulb,
     title: "Innovation First",
-    description: "We encourage creative thinking and embrace new technologies to solve complex problems.",
+    description:
+      "We encourage creative thinking and embrace new technologies to solve complex problems.",
   },
   {
     icon: Users,
     title: "Collaborative Spirit",
-    description: "We believe in the power of teamwork and foster an environment of mutual support.",
+    description:
+      "We believe in the power of teamwork and foster an environment of mutual support.",
   },
   {
     icon: Trophy,
     title: "Excellence Driven",
-    description: "We strive for excellence in everything we do and celebrate achievements together.",
+    description:
+      "We strive for excellence in everything we do and celebrate achievements together.",
   },
   {
     icon: Coffee,
     title: "Work-Life Balance",
-    description: "We promote a healthy work-life balance with flexible schedules and remote work options.",
+    description:
+      "We promote a healthy work-life balance with flexible schedules and remote work options.",
   },
-]
+];
 
 export default function CompanyCulture() {
   return (
@@ -37,8 +41,9 @@ export default function CompanyCulture() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl font-mono mb-4">Our Culture</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            At Oriums, we've built a culture that values innovation, collaboration, and personal growth
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            At Oriums, we've built a culture that values innovation,
+            collaboration, and personal growth
           </p>
         </motion.div>
 
@@ -46,20 +51,20 @@ export default function CompanyCulture() {
           {cultureValues.map((value, index) => (
             <motion.div
               key={value.title}
-              className="text-center p-8 bg-white rounded-2xl shadow-lg border border-gray-200"
+              className="text-center p-8 bg-card rounded-2xl shadow-lg border border-gray-200"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-blue-50">
-                <value.icon className="h-8 w-8 text-blue-600" />
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-primary/10">
+                <value.icon className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-              <p className="text-gray-600">{value.description}</p>
+              <p className="text-muted-foreground">{value.description}</p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
