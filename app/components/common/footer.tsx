@@ -93,18 +93,18 @@ export default function Footer() {
               <div className='flex items-start'>
                 <MapPin className='h-5 w-5 text-primary mt-1' />
                 <p className='ml-3 text-muted-foreground'>
-                  123 Innovation Street
-                  <br />
-                  Tech City, TC 12345
+                  Riyadh, Saudi Arabia
                 </p>
               </div>
               <div className='flex items-center'>
                 <Phone className='h-5 w-5 text-primary' />
-                <p className='ml-3 text-muted-foreground'>+1 (555) 123-4567</p>
+                <p className='ml-3 text-muted-foreground'>+966 50 735 1612</p>
               </div>
               <div className='flex items-center'>
                 <Mail className='h-5 w-5 text-primary' />
-                <p className='ml-3 text-muted-foreground'>contact@oriums.com</p>
+                <p className='ml-3 text-muted-foreground'>
+                  the.oriums@gmail.com
+                </p>
               </div>
             </div>
           </div>
