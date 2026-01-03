@@ -71,9 +71,9 @@ export default function Home() {
         transform businesses, empower teams, and create lasting impact. Your
         vision deserves technology that works as hard as you do.
       </TextReveal>
-      <Reveal delay={0.1}>
+      {/* <Reveal delay={0.1}>
         <AboutSection />
-      </Reveal>
+      </Reveal> */}
       {/* <TrustSignals /> */}
       <Reveal delay={0.2}>
         <ServicesSection />

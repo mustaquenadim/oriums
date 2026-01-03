@@ -379,7 +379,7 @@ export default function TechStackSection() {
         </motion.div>
 
         {/* Category Stats */}
-        <motion.div
+        {/* <motion.div
           className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -406,7 +406,7 @@ export default function TechStackSection() {
               </div>
             );
           })}
-        </motion.div>
+        </motion.div> */}
 
         {/* Infinite Marquee */}
         <div className="relative">
