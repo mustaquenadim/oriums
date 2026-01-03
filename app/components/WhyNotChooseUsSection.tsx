@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   DollarSign,
   Clock,
@@ -15,8 +15,8 @@ import {
   MessageCircle,
   Calendar,
   Shield,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const concerns = [
   {
@@ -31,7 +31,8 @@ const concerns = [
       "Explore template-based solutions for basic needs",
       "Look into offshore development for cost savings",
     ],
-    whenToChooseUs: "When quality, reliability, and long-term support matter more than initial cost",
+    whenToChooseUs:
+      "When quality, reliability, and long-term support matter more than initial cost",
     color: "from-red-500 to-pink-500",
     bgColor: "bg-red-50 dark:bg-red-900/20",
   },
@@ -47,7 +48,8 @@ const concerns = [
       "Consider pre-built solutions or SaaS products",
       "Hire developers for quick MVP development",
     ],
-    whenToChooseUs: "When you want a robust, scalable solution built right the first time",
+    whenToChooseUs:
+      "When you want a robust, scalable solution built right the first time",
     color: "from-orange-500 to-red-500",
     bgColor: "bg-orange-50 dark:bg-orange-900/20",
   },
@@ -63,7 +65,8 @@ const concerns = [
       "Small boutique agencies for simple websites",
       "DIY website builders for basic needs",
     ],
-    whenToChooseUs: "When your project requires diverse expertise and coordinated team effort",
+    whenToChooseUs:
+      "When your project requires diverse expertise and coordinated team effort",
     color: "from-blue-500 to-cyan-500",
     bgColor: "bg-blue-50 dark:bg-blue-900/20",
   },
@@ -79,7 +82,8 @@ const concerns = [
       "Consultants with niche expertise",
       "In-house development teams with domain knowledge",
     ],
-    whenToChooseUs: "When you need versatile technical skills with business acumen across industries",
+    whenToChooseUs:
+      "When you need versatile technical skills with business acumen across industries",
     color: "from-purple-500 to-blue-500",
     bgColor: "bg-purple-50 dark:bg-purple-900/20",
   },
@@ -95,7 +99,8 @@ const concerns = [
       "In-house development for full control",
       "Contractors for project-based work",
     ],
-    whenToChooseUs: "When you want a technology partner invested in your long-term success",
+    whenToChooseUs:
+      "When you want a technology partner invested in your long-term success",
     color: "from-green-500 to-teal-500",
     bgColor: "bg-green-50 dark:bg-green-900/20",
   },
@@ -111,11 +116,12 @@ const concerns = [
       "Agile-only shops for iterative development",
       "In-house teams for direct control",
     ],
-    whenToChooseUs: "When you value proven processes and predictable outcomes over complete flexibility",
+    whenToChooseUs:
+      "When you value proven processes and predictable outcomes over complete flexibility",
     color: "from-indigo-500 to-purple-500",
     bgColor: "bg-indigo-50 dark:bg-indigo-900/20",
   },
-]
+];
 
 const trustBuilders = [
   {
@@ -131,16 +137,17 @@ const trustBuilders = [
   {
     icon: Calendar,
     title: "Realistic Timelines",
-    description: "We set achievable deadlines and communicate any changes early",
+    description:
+      "We set achievable deadlines and communicate any changes early",
   },
-]
+];
 
 export default function WhyNotChooseUsSection() {
-  const [activeConcern, setActiveConcern] = useState(1)
-  const [showAlternatives, setShowAlternatives] = useState<number | null>(null)
+  const [activeConcern, setActiveConcern] = useState(1);
+  const [showAlternatives, setShowAlternatives] = useState<number | null>(null);
 
   return (
-    <section className="relative z-10 py-24 bg-background">
+    <section className="relative z-10 py-24 bg-muted/30">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <motion.div
@@ -151,15 +158,18 @@ export default function WhyNotChooseUsSection() {
         >
           <div className="inline-flex items-center rounded-full border bg-secondary px-4 py-2 mb-6">
             <AlertTriangle className="w-4 h-4 text-primary mr-2" />
-            <span className="text-sm font-semibold text-secondary-foreground">Honest Assessment</span>
+            <span className="text-sm font-semibold text-secondary-foreground">
+              Honest Assessment
+            </span>
           </div>
           <h2 className="text-4xl mb-4 text-foreground">
             When We Might
             <span className="block text-primary">Not Be Right for You</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We believe in transparency. Here are some honest reasons why Oriums might not be the perfect fit for your
-            specific needs, along with better alternatives.
+            We believe in transparency. Here are some honest reasons why Oriums
+            might not be the perfect fit for your specific needs, along with
+            better alternatives.
           </p>
         </motion.div>
 
@@ -170,10 +180,11 @@ export default function WhyNotChooseUsSection() {
             {concerns.map((concern, index) => (
               <motion.div
                 key={concern.id}
-                className={`p-6 rounded-2xl border cursor-pointer transition-all duration-300 ${activeConcern === concern.id
-                  ? `${concern.bgColor} border-orange-500/50 shadow-lg`
-                  : "bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover:border-orange-500/30"
-                  }`}
+                className={`p-6 rounded-2xl border cursor-pointer transition-all duration-300 ${
+                  activeConcern === concern.id
+                    ? `${concern.bgColor} border-primary/50 shadow-lg`
+                    : "bg-card hover:border-primary/30"
+                }`}
                 onClick={() => setActiveConcern(concern.id)}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -187,9 +198,15 @@ export default function WhyNotChooseUsSection() {
                     <concern.icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-1 text-card-foreground">{concern.title}</h3>
-                    <p className="text-sm text-primary font-medium mb-2">{concern.concern}</p>
-                    <p className="text-muted-foreground text-sm">{concern.description}</p>
+                    <h3 className="text-xl font-semibold mb-1 text-card-foreground">
+                      {concern.title}
+                    </h3>
+                    <p className="text-sm text-primary font-medium mb-2">
+                      {concern.concern}
+                    </p>
+                    <p className="text-muted-foreground text-sm">
+                      {concern.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -216,11 +233,17 @@ export default function WhyNotChooseUsSection() {
                         >
                           <concern.icon className="w-10 h-10 text-white" />
                         </div>
-                        <h3 className="text-2xl font-bold mb-2 text-card-foreground">{concern.title}</h3>
-                        <p className="text-primary font-semibold">{concern.concern}</p>
+                        <h3 className="text-2xl font-bold mb-2 text-card-foreground">
+                          {concern.title}
+                        </h3>
+                        <p className="text-primary font-semibold">
+                          {concern.concern}
+                        </p>
                       </div>
 
-                      <p className="text-muted-foreground mb-8 text-center">{concern.description}</p>
+                      <p className="text-muted-foreground mb-8 text-center">
+                        {concern.description}
+                      </p>
 
                       {/* Better Alternatives */}
                       <div className="mb-8">
@@ -230,7 +253,10 @@ export default function WhyNotChooseUsSection() {
                         </h4>
                         <ul className="space-y-2">
                           {concern.alternatives.map((alternative, index) => (
-                            <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <li
+                              key={index}
+                              className="flex items-start gap-2 text-sm text-muted-foreground"
+                            >
                               <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                               {alternative}
                             </li>
@@ -240,11 +266,15 @@ export default function WhyNotChooseUsSection() {
 
                       {/* When to Choose Us */}
                       <div className="p-4 bg-primary/10 rounded-xl">
-                        <h4 className="font-semibold mb-2 text-primary">But choose us when:</h4>
-                        <p className="text-sm text-muted-foreground">{concern.whenToChooseUs}</p>
+                        <h4 className="font-semibold mb-2 text-primary">
+                          But choose us when:
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          {concern.whenToChooseUs}
+                        </p>
                       </div>
                     </motion.div>
-                  ),
+                  )
               )}
             </AnimatePresence>
           </div>
@@ -257,7 +287,9 @@ export default function WhyNotChooseUsSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-16"
         >
-          <h3 className="text-2xl font-semibold text-center mb-12">Why We Share This Information</h3>
+          <h3 className="text-2xl font-semibold text-center mb-12">
+            Why We Share This Information
+          </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {trustBuilders.map((builder, index) => (
               <motion.div
@@ -270,8 +302,12 @@ export default function WhyNotChooseUsSection() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <builder.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h4 className="font-semibold mb-2 text-card-foreground">{builder.title}</h4>
-                <p className="text-sm text-muted-foreground">{builder.description}</p>
+                <h4 className="font-semibold mb-2 text-card-foreground">
+                  {builder.title}
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  {builder.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -284,13 +320,19 @@ export default function WhyNotChooseUsSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-12 text-primary-foreground"
         >
-          <h3 className="text-3xl font-bold mb-4">Still Not Sure If We're Right for You?</h3>
+          <h3 className="text-3xl font-bold mb-4">
+            Still Not Sure If We're Right for You?
+          </h3>
           <p className="text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-            Let's have an honest conversation about your project. We'll help you determine if we're the right fit, or
-            point you toward better alternatives.
+            Let's have an honest conversation about your project. We'll help you
+            determine if we're the right fit, or point you toward better
+            alternatives.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-background text-primary hover:bg-background/90 px-8 py-4 rounded-full font-medium shadow-md hover:shadow-lg">
+            <Button
+              size="lg"
+              className="bg-background text-primary hover:bg-background/90 px-8 py-4 rounded-full font-medium shadow-md hover:shadow-lg"
+            >
               Schedule Free Consultation
             </Button>
             <Button
@@ -308,5 +350,5 @@ export default function WhyNotChooseUsSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
