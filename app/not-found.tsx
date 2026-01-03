@@ -1,32 +1,32 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { Home, ArrowLeft, Search, Mail } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import CustomCursor from "./components/CustomCursor"
-import BackgroundGrid from "./components/BackgroundGrid"
-import { useState, useEffect } from "react"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { Home, ArrowLeft, Search, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import CustomCursor from "./components/CustomCursor";
+import BackgroundGrid from "./components/BackgroundGrid";
+import { useState, useEffect } from "react";
 
 export default function NotFound() {
-  const [cursorVariant, setCursorVariant] = useState("default")
+  const [cursorVariant, setCursorVariant] = useState("default");
 
   useEffect(() => {
-    const handleMouseEnter = () => setCursorVariant("hover")
-    const handleMouseLeave = () => setCursorVariant("default")
+    const handleMouseEnter = () => setCursorVariant("hover");
+    const handleMouseLeave = () => setCursorVariant("default");
 
     document.querySelectorAll("a, button").forEach((el) => {
-      el.addEventListener("mouseenter", handleMouseEnter)
-      el.addEventListener("mouseleave", handleMouseLeave)
-    })
+      el.addEventListener("mouseenter", handleMouseEnter);
+      el.addEventListener("mouseleave", handleMouseLeave);
+    });
 
     return () => {
       document.querySelectorAll("a, button").forEach((el) => {
-        el.removeEventListener("mouseenter", handleMouseEnter)
-        el.removeEventListener("mouseleave", handleMouseLeave)
-      })
-    }
-  }, [])
+        el.removeEventListener("mouseenter", handleMouseEnter);
+        el.removeEventListener("mouseleave", handleMouseLeave);
+      });
+    };
+  }, []);
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-background text-foreground flex items-center justify-center">
@@ -53,7 +53,9 @@ export default function NotFound() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <span className="mr-2">🔍</span>
+          <span className="mr-2">
+            <Search className="w-4 h-4" />
+          </span>
           <span className="text-sm text-muted-foreground">Page not found</span>
         </motion.div>
 
@@ -76,11 +78,12 @@ export default function NotFound() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          The page you're looking for might have been moved, deleted, or doesn't exist. Let's get you back on track.
+          The page you're looking for might have been moved, deleted, or doesn't
+          exist. Let's get you back on track.
         </motion.p>
 
         {/* Action Buttons */}
-        <motion.div
+        {/* <motion.div
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -107,57 +110,7 @@ export default function NotFound() {
               Contact Us
             </Link>
           </Button>
-        </motion.div>
-
-        {/* Quick Links */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          {[
-            {
-              icon: Home,
-              title: "Home",
-              description: "Return to the homepage",
-              href: "/",
-            },
-            {
-              icon: Search,
-              title: "Portfolio",
-              description: "Browse our work",
-              href: "/portfolio",
-            },
-            {
-              icon: Mail,
-              title: "Contact",
-              description: "Get in touch with us",
-              href: "/contact",
-            },
-          ].map((link, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ y: -5 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
-            >
-              <Link
-                href={link.href}
-                className="block bg-card border rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 group"
-              >
-                <div className="flex flex-col items-center text-center">
-                  <div className="p-3 bg-primary/10 rounded-full mb-4 group-hover:bg-primary/20 transition-colors">
-                    <link.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-card-foreground mb-2">{link.title}</h3>
-                  <p className="text-sm text-muted-foreground">{link.description}</p>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* Back Button */}
         <motion.div
@@ -177,5 +130,5 @@ export default function NotFound() {
         </motion.div>
       </div>
     </main>
-  )
+  );
 }
