@@ -19,6 +19,7 @@ import TestimonialsSection from "./components/TestimonialsSection"
 import FaqSection from "./components/FaqSection"
 import BlogSection from "./components/BlogSection"
 import ContactSection from "./components/ContactSection"
+import Reveal from "./components/Reveal"
 
 // Conversion Optimization Components
 import ExitIntentPopup from "./components/ConversionOptimization/ExitIntentPopup"
@@ -64,22 +65,52 @@ export default function Home() {
       {/* Main Content */}
       {/* <TopBanner /> */}
       <Hero />
-      <AboutSection />
+      <Reveal delay={0.1}>
+        <AboutSection />
+      </Reveal>
       {/* <TrustSignals /> */}
-      <ServicesSection />
-      <TechStackSection />
-      <WhyChooseUsSection />
-      <WhyNotChooseUsSection />
-      <ValueProposition />
-      <HowWeWorkSection />
-      <ComparisonTable />
-      <CEOQuoteSection />
-      <CTOQuoteSection />
-      <PortfolioSection />
-      <TestimonialsSection />
-      <FaqSection />
-      <BlogSection />
-      <ContactSection />
+      <Reveal delay={0.2}>
+        <ServicesSection />
+      </Reveal>
+      <Reveal delay={0.1}>
+        <TechStackSection />
+      </Reveal>
+      <Reveal delay={0.2}>
+        <WhyChooseUsSection />
+      </Reveal>
+      <Reveal delay={0.1}>
+        <WhyNotChooseUsSection />
+      </Reveal>
+      <Reveal delay={0.2}>
+        <ValueProposition />
+      </Reveal>
+      <Reveal delay={0.1}>
+        <HowWeWorkSection />
+      </Reveal>
+      <Reveal delay={0.2}>
+        <ComparisonTable />
+      </Reveal>
+      <Reveal delay={0.1}>
+        <CEOQuoteSection />
+      </Reveal>
+      <Reveal delay={0.2}>
+        <CTOQuoteSection />
+      </Reveal>
+      <Reveal delay={0.1}>
+        <PortfolioSection />
+      </Reveal>
+      <Reveal delay={0.2}>
+        <TestimonialsSection />
+      </Reveal>
+      <Reveal delay={0.1}>
+        <FaqSection />
+      </Reveal>
+      <Reveal delay={0.2}>
+        <BlogSection />
+      </Reveal>
+      <Reveal delay={0.1}>
+        <ContactSection />
+      </Reveal>
     </main>
   )
 }

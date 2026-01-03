@@ -119,6 +119,9 @@
   * {
     font-family: var(--font-space-grotesk) !important;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-space-grotesk);
