@@ -105,9 +105,9 @@ export default function Home() {
       <Reveal delay={0.1}>
         <PortfolioSection />
       </Reveal>
-      <Reveal delay={0.2}>
+      {/* <Reveal delay={0.2}>
         <TestimonialsSection />
-      </Reveal>
+      </Reveal> */}
       <Reveal delay={0.1}>
         <FaqSection />
       </Reveal>
