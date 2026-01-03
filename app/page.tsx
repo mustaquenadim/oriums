@@ -84,9 +84,9 @@ export default function Home() {
       <Reveal delay={0.2}>
         <WhyChooseUsSection />
       </Reveal>
-      <Reveal delay={0.1}>
+      {/* <Reveal delay={0.1}>
         <WhyNotChooseUsSection />
-      </Reveal>
+      </Reveal> */}
       <Reveal delay={0.2}>
         <ValueProposition />
       </Reveal>
