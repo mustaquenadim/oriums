@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import {
   Smartphone,
   Palette,
@@ -14,7 +14,7 @@ import {
   Megaphone,
   Cloud,
   Headphones,
-} from "lucide-react"
+} from "lucide-react";
 
 const services = [
   {
@@ -26,7 +26,8 @@ const services = [
   {
     icon: Palette,
     title: "Product Design (UI/UX)",
-    description: "User-centered design solutions that create meaningful and seamless experiences across all platforms.",
+    description:
+      "User-centered design solutions that create meaningful and seamless experiences across all platforms.",
   },
   {
     icon: Paintbrush,
@@ -37,53 +38,62 @@ const services = [
   {
     icon: PenTool,
     title: "Graphic Design",
-    description: "Creative visual solutions that communicate your message effectively and elevate your brand presence.",
+    description:
+      "Creative visual solutions that communicate your message effectively and elevate your brand presence.",
   },
   {
     icon: Globe,
     title: "Web Apps Development",
-    description: "Scalable and responsive web applications built with modern frameworks and best practices.",
+    description:
+      "Scalable and responsive web applications built with modern frameworks and best practices.",
   },
   {
     icon: Database,
     title: "Web Systems",
-    description: "Custom web-based systems and enterprise solutions that streamline business operations.",
+    description:
+      "Custom web-based systems and enterprise solutions that streamline business operations.",
   },
   {
     icon: Blocks,
     title: "Blockchain Development",
-    description: "Secure and decentralized blockchain solutions for various industries and use cases.",
+    description:
+      "Secure and decentralized blockchain solutions for various industries and use cases.",
   },
   {
     icon: Cpu,
     title: "IoT Development",
-    description: "Connected device solutions that bridge the physical and digital worlds for smarter operations.",
+    description:
+      "Connected device solutions that bridge the physical and digital worlds for smarter operations.",
   },
   {
     icon: Brain,
     title: "AI and Machine Learning",
-    description: "Intelligent solutions that leverage advanced algorithms to automate and optimize processes.",
+    description:
+      "Intelligent solutions that leverage advanced algorithms to automate and optimize processes.",
   },
   {
     icon: Megaphone,
     title: "Digital Marketing Services",
-    description: "Data-driven marketing strategies that help businesses grow their online presence and reach.",
+    description:
+      "Data-driven marketing strategies that help businesses grow their online presence and reach.",
   },
   {
     icon: Cloud,
     title: "Cloud Services",
-    description: "Scalable cloud solutions and infrastructure management for optimal performance and reliability.",
+    description:
+      "Scalable cloud solutions and infrastructure management for optimal performance and reliability.",
   },
   {
     icon: Headphones,
     title: "IT Consulting and Support",
-    description: "Expert guidance and technical support to help businesses navigate their digital transformation.",
+    description:
+      "Expert guidance and technical support to help businesses navigate their digital transformation.",
   },
-]
+];
 
 export default function ServicesSection() {
   return (
-    <section className="relative z-10 px-6 py-24 bg-muted/30">
+    <section id="services" className="relative z-10 px-6 py-24 bg-muted/30">
       <div className="mx-auto max-w-7xl">
         <motion.div
           className="text-center mb-16"
@@ -93,7 +103,8 @@ export default function ServicesSection() {
         >
           <h2 className="text-4xl mb-4 text-foreground">Our Services</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive digital solutions tailored to transform your business and drive innovation
+            Comprehensive digital solutions tailored to transform your business
+            and drive innovation
           </p>
         </motion.div>
 
@@ -109,12 +120,14 @@ export default function ServicesSection() {
               <div className="mb-4 p-3 rounded-lg bg-primary/10 w-fit group-hover:bg-primary/20 transition-colors">
                 <service.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-card-foreground">{service.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-card-foreground">
+                {service.title}
+              </h3>
               <p className="text-muted-foreground">{service.description}</p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
