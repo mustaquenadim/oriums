@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight, Sparkles, Target, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import CalButton from "@/components/CalButton"
 
 const personalizedOffers = [
   {
@@ -64,10 +65,17 @@ export default function PersonalizedCTA() {
             </div>
             <h3 className="text-lg font-bold mb-2 text-card-foreground">{currentOffer.title}</h3>
             <p className="text-sm text-muted-foreground mb-4">{currentOffer.subtitle}</p>
-            <Button className="w-full shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-all duration-200" size="lg">
-              {currentOffer.cta}
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+            {currentOffer.cta.toLowerCase().includes('schedule') || currentOffer.cta.toLowerCase().includes('consult') ? (
+              <CalButton className="w-full shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-all duration-200" size="lg">
+                {currentOffer.cta}
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </CalButton>
+            ) : (
+              <Button className="w-full shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-all duration-200" size="lg">
+                {currentOffer.cta}
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            )
           </div>
         </div>
       </div>

@@ -16,6 +16,7 @@ import {
   TrendingUp,
   Headphones,
 } from 'lucide-react';
+import CalButton from '@/components/CalButton';
 
 const mainReasons = [
   {
@@ -350,13 +351,17 @@ export default function WhyChooseUsSection() {
             >
               Start Your Project Today
             </motion.button>
-            <motion.button
+            <CalButton
+              component={motion.button}
+              namespace='free-consultation'
+              link='oriums/free-consultation'
+              config={{ layout: 'month_view', theme: 'dark' }}
               className='px-8 py-4 border-2 border-primary-foreground text-primary-foreground rounded-full font-medium hover:bg-primary-foreground hover:text-primary transition-colors'
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Schedule Free Consultation
-            </motion.button>
+            </CalButton>
           </div>
           <div className='flex items-center justify-center mt-6 text-sm text-primary-foreground/90'>
             <CheckCircle className='w-4 h-4 mr-2' />

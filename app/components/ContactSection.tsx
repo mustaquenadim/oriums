@@ -5,6 +5,7 @@ import { Phone, Mail, MapPin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import CalButton from '@/components/CalButton';
 
 export default function ContactSection() {
   return (
@@ -86,13 +87,16 @@ export default function ContactSection() {
                 Schedule a free consultation with our experts to discuss your
                 project requirements.
               </p>
-              <Button
+              <CalButton
+                namespace='free-consultation'
+                link='oriums/free-consultation'
+                config={{ layout: 'month_view', theme: 'dark' }}
                 variant='secondary'
                 size='lg'
                 className='bg-background text-primary hover:bg-background/90 shadow-md hover:shadow-lg'
               >
                 Schedule a Call
-              </Button>
+              </CalButton>
             </div>
           </motion.div>
 
