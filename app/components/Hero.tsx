@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center bg-background px-6 pt-32 pb-24 md:px-12 lg:px-24 overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <Beams lightColor="#f97216" rotation={30} />
+        <Beams lightColor="#ffa200" rotation={30} />
       </div>
       {/* Gradient blend overlay at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-background to-transparent z-20 pointer-events-none" />
