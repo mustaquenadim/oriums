@@ -29,10 +29,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Oriums', url: 'https://oriums.com' }],
   creator: 'Oriums',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
-  ],
   openGraph: {
     type: 'website',
     locale: 'en_US',
